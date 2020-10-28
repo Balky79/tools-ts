@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import WheelOfFortunePresentation from '../presentation/wheelpresentation';
 
-function WheelContainer() {
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
+
+function WheelContainer(): ReactElement {
+    const query = useQuery();
     return (
         <div>
-            <WheelOfFortunePresentation></WheelOfFortunePresentation>
+            <WheelOfFortunePresentation>{query}</WheelOfFortunePresentation>
         </div>
     );
 }

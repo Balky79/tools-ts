@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import logo from '../../../igorstools.svg';
 import { Link } from 'react-router-dom';
+import query from '../container/wheeloffortune';
 
 class WheelPresentation extends Component {
-    render() {
+    render(): ReactElement {
         return (
-            <header className="App-header">
+            <div>
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
                 <Link to="/tools/">Home </Link>
-            </header>
+                {query}
+            </div>
         );
     }
 }
